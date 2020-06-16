@@ -1,3 +1,4 @@
 <resources>
-  <string name="app_name">GithubUserExplorer</string>
+    <string name="app_name">Github User Explorer</string>
+    <string name="label_user_detail">People</string>
 </resources>

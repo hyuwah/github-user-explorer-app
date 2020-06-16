@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_app"
+    app:startDestination="@id/userSearchFragment">
+
+    <fragment
+        android:id="@+id/userSearchFragment"
+        android:name="dev.hyuwah.githubuserexplorer.presentation.users.search.UserSearchFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_user_search">
+        <action
+            android:id="@+id/action_userSearchFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="dev.hyuwah.githubuserexplorer.presentation.users.detail.UserDetailFragment"
+        android:label="@string/label_user_detail"
+        tools:layout="@layout/fragment_user_detail">
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+</navigation>

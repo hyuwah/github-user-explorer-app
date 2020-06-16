@@ -1,5 +1,7 @@
 package dev.hyuwah.githubuserexplorer.presentation.utils
 
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.core.widget.doOnTextChanged
 import com.google.android.material.textfield.TextInputLayout
@@ -36,4 +38,9 @@ fun SearchView.getQueryChangeFlow(): StateFlow<String> {
 
     })
     return query
+}
+
+fun TextView.setTextAndVisibility(text: String?) {
+    visibility = if (text.isNullOrEmpty()) View.GONE else View.VISIBLE
+    text?.let { this.text = it }
 }

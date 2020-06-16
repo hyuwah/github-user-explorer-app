@@ -1,17 +1,13 @@
-package dev.hyuwah.githubuserexplorer.presentation
+package dev.hyuwah.githubuserexplorer.presentation.users.search
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
-import dev.hyuwah.githubuserexplorer.data.remote.model.UserItemResponse
-import dev.hyuwah.githubuserexplorer.data.remote.model.UserSearchResultResponse
 import dev.hyuwah.githubuserexplorer.databinding.RowItemUserBinding
 import dev.hyuwah.githubuserexplorer.presentation.model.UserItemModel
-import kotlinx.android.synthetic.main.row_item_user.view.*
 
 typealias UserItemClick = (item: UserItemModel) -> Unit
 
@@ -39,7 +35,10 @@ class UsersAdapter(
             }
     }
 
-    private val differ = AsyncListDiffer(this, diffCallback)
+    private val differ = AsyncListDiffer(
+        this,
+        diffCallback
+    )
 
     fun submitList(newList: List<UserItemModel>) {
         differ.submitList(newList)
