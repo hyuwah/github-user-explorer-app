@@ -63,7 +63,9 @@ class UsersAdapter(
 
         fun bind(item: UserItemModel, onItemClick: UserItemClick) = with(binding) {
             root.setOnClickListener { onItemClick(item) }
-            ivUserPic.load(item.avatarUrl)
+            ivUserPic.load(item.avatarUrl) {
+                crossfade(true)
+            }
             tvUserName.text = item.username
         }
 

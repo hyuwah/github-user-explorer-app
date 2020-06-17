@@ -1,7 +1,11 @@
 package dev.hyuwah.githubuserexplorer.presentation.users.detail
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
@@ -13,6 +17,7 @@ import dev.hyuwah.githubuserexplorer.R
 import dev.hyuwah.githubuserexplorer.data.remote.model.UserDetailResponse
 import dev.hyuwah.githubuserexplorer.databinding.FragmentUserDetailBinding
 import dev.hyuwah.githubuserexplorer.presentation.utils.NumberFormatter
+import dev.hyuwah.githubuserexplorer.presentation.utils.observeEvent
 import dev.hyuwah.githubuserexplorer.presentation.utils.setTextAndVisibility
 import dev.hyuwah.githubuserexplorer.presentation.utils.viewBinding
 
@@ -25,12 +30,41 @@ class UserDetailFragment : Fragment(R.layout.fragment_user_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         setupObserver()
         viewModel.getUserDetail(userDetailArgs.userName)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_user_detail, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_share -> {
+                viewModel.shareProfile()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     private fun setupObserver() {
         viewModel.userDetail.observe(viewLifecycleOwner, ::setupUI)
+        viewModel.uiEvent.observeEvent(viewLifecycleOwner) {
+            when (it) {
+                is UserDetailEvent.ShareProfile -> shareProfile(it.url)
+            }
+        }
+    }
+
+    private fun shareProfile(url: String) {
+        ShareCompat.IntentBuilder.from(requireActivity())
+            .setType("text/plain")
+            .setChooserTitle("Share Github Profile")
+            .setText(url)
+            .startChooser()
     }
 
     private fun setupUI(userDetail: UserDetailResponse) {
