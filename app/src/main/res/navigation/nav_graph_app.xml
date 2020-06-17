@@ -26,5 +26,30 @@
         <argument
             android:name="userName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_userDetailFragment_to_userSocialFragment"
+            app:destination="@id/userSocialFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSocialFragment"
+        android:name="dev.hyuwah.githubuserexplorer.presentation.users.social.UserSocialFragment"
+        tools:layout="@layout/fragment_user_social">
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <argument
+            android:name="socialType"
+            app:argType="dev.hyuwah.githubuserexplorer.presentation.users.social.SocialType" />
+        <action
+            android:id="@+id/action_userSocialFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>

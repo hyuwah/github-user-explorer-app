@@ -9,6 +9,7 @@ import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.api.load
 import coil.transform.RoundedCornersTransformation
@@ -16,6 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.hyuwah.githubuserexplorer.R
 import dev.hyuwah.githubuserexplorer.data.remote.model.UserDetailResponse
 import dev.hyuwah.githubuserexplorer.databinding.FragmentUserDetailBinding
+import dev.hyuwah.githubuserexplorer.presentation.users.social.SocialType
 import dev.hyuwah.githubuserexplorer.presentation.utils.NumberFormatter
 import dev.hyuwah.githubuserexplorer.presentation.utils.observeEvent
 import dev.hyuwah.githubuserexplorer.presentation.utils.setTextAndVisibility
@@ -32,6 +34,7 @@ class UserDetailFragment : Fragment(R.layout.fragment_user_detail) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
         setupObserver()
+        setupListener()
         viewModel.getUserDetail(userDetailArgs.userName)
     }
 
@@ -85,7 +88,30 @@ class UserDetailFragment : Fragment(R.layout.fragment_user_detail) {
                     userDetail.following
                 )
             )
+            tvRepoCount.text = userDetail.publicRepos.toString()
+            tvFollowersCount.text = NumberFormatter.formatWithSuffix(userDetail.followers)
+            tvFollowingCount.text = NumberFormatter.formatWithSuffix(userDetail.following)
         }
+    }
+
+    private fun setupListener() {
+        with(binding) {
+            btnRepo.setOnClickListener { }
+            btnFollowers.setOnClickListener {
+                navigateToSocialFragment(SocialType.Followers)
+            }
+            btnFollowing.setOnClickListener {
+                navigateToSocialFragment(SocialType.Following)
+            }
+        }
+    }
+
+    private fun navigateToSocialFragment(type: SocialType) {
+        findNavController().navigate(
+            UserDetailFragmentDirections.actionUserDetailFragmentToUserSocialFragment(
+                userDetailArgs.userName, type
+            )
+        )
     }
 
     private fun getFollowersFollowing(followers: Int, following: Int): String {

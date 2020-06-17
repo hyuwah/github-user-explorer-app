@@ -2,7 +2,7 @@
 
 An example / template app
 
-![preview-gif](https://res.cloudinary.com/hyuwah-github-io/image/upload/v1592326323/GithubUserExplorer/init-user-detail.gif)
+![preview-gif](https://res.cloudinary.com/hyuwah-github-io/image/upload/v1592448170/GithubUserExplorer/init-user-social-optimized.gif)
 
 ## Features
 
@@ -10,9 +10,10 @@ An example / template app
     - [ ] Pagination
 - [x] User Detail
 - [ ] User Repo List
-- [ ] User Following & Follower List
+- [x] User Following & Follower List
     - [ ] Pagination
 - [ ] Github Authentication for higher rate limit
+- [ ] Favorite / Bookmark User
 
 ## Tech Stack
 
@@ -32,7 +33,7 @@ MVVM + Repository pattern
 - [x] [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
 - [x] [Coil](https://github.com/coil-kt/coil)
 - [x] [Chucker](https://github.com/ChuckerTeam/chucker)
-- [x] Jetpack Navigation
+- [x] [Jetpack Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)
 - [ ] Room
 - [ ] Ktlint
 - [ ] Spek
