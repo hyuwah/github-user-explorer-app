@@ -35,7 +35,7 @@ data class UserRepoItemResponse(
     @SerializedName("deployments_url")
     val deploymentsUrl: String = "",
     @SerializedName("description")
-    val description: String = "",
+    val description: String? = "",
     @SerializedName("disabled")
     val disabled: Boolean = false,
     @SerializedName("downloads_url")
@@ -71,7 +71,7 @@ data class UserRepoItemResponse(
     @SerializedName("has_wiki")
     val hasWiki: Boolean = false,
     @SerializedName("homepage")
-    val homepage: String = "",
+    val homepage: String? = "",
     @SerializedName("hooks_url")
     val hooksUrl: String = "",
     @SerializedName("html_url")
@@ -89,7 +89,7 @@ data class UserRepoItemResponse(
     @SerializedName("labels_url")
     val labelsUrl: String = "",
     @SerializedName("language")
-    val language: String = "",
+    val language: String? = "",
     @SerializedName("languages_url")
     val languagesUrl: String = "",
     @SerializedName("license")

@@ -33,6 +33,13 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_userDetailFragment_to_repoListFragment"
+            app:destination="@id/repoListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/userSocialFragment"
@@ -51,5 +58,14 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/repoListFragment"
+        android:name="dev.hyuwah.githubuserexplorer.presentation.repos.RepoListFragment"
+        android:label="Repositories"
+        tools:layout="@layout/fragment_repo_list">
+        <argument
+            android:name="userName"
+            app:argType="string" />
     </fragment>
 </navigation>

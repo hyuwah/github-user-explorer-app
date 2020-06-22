@@ -96,7 +96,9 @@ class UserDetailFragment : Fragment(R.layout.fragment_user_detail) {
 
     private fun setupListener() {
         with(binding) {
-            btnRepo.setOnClickListener { }
+            btnRepo.setOnClickListener {
+                navigateToReposFragment()
+            }
             btnFollowers.setOnClickListener {
                 navigateToSocialFragment(SocialType.Followers)
             }
@@ -104,6 +106,14 @@ class UserDetailFragment : Fragment(R.layout.fragment_user_detail) {
                 navigateToSocialFragment(SocialType.Following)
             }
         }
+    }
+
+    private fun navigateToReposFragment() {
+        findNavController().navigate(
+            UserDetailFragmentDirections.actionUserDetailFragmentToRepoListFragment(
+                userDetailArgs.userName
+            )
+        )
     }
 
     private fun navigateToSocialFragment(type: SocialType) {

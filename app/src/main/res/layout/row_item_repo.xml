@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackgroundBorderless"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iv_user_pic"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/grey_800"
+        app:layout_constraintBottom_toBottomOf="@id/iv_user_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/iv_user_pic"
+        app:layout_constraintTop_toTopOf="@id/iv_user_pic"
+        tools:text="username" />
+
+    <TextView
+        android:id="@+id/tv_repo_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/iv_user_pic"
+        tools:text="Repository Name" />
+
+    <TextView
+        android:id="@+id/tv_repo_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_repo_name"
+        tools:text="Repository description here..." />
+
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_repo_desc">
+
+        <TextView
+            android:id="@+id/tv_repo_star_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_star_solid"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:textColor="@color/grey_600"
+            app:drawableTint="@color/yellow_700" />
+
+        <TextView
+            android:id="@+id/tv_repo_fork_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:drawableStart="@drawable/ic_code_branch"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:textColor="@color/grey_600"
+            app:drawableTint="@color/grey_600" />
+
+        <TextView
+            android:id="@+id/tv_repo_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:drawableStart="@drawable/ic_file_code_solid"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="Language"
+            android:textColor="@color/grey_600"
+            app:drawableTint="@color/grey_600" />
+
+    </LinearLayout>
+
+
+    <!--    Date -->
+    <TextView
+        android:id="@+id/tv_repo_date_created"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Date Created"
+        android:textColor="@color/grey_600"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_bottom_section" />
+
+    <TextView
+        android:id="@+id/tv_repo_date_updated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Updated"
+        android:textColor="@color/grey_600"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_repo_date_created" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,14 +2,17 @@
 
 An example / template app
 
-![preview-gif](https://res.cloudinary.com/hyuwah-github-io/image/upload/v1592448170/GithubUserExplorer/init-user-social-optimized.gif)
+<p align="center">
+  <img src="https://res.cloudinary.com/hyuwah-github-io/image/upload/v1592448170/GithubUserExplorer/init-user-social-optimized.gif" width="270" alt="User Search">
+  <img src="https://res.cloudinary.com/hyuwah-github-io/image/upload/v1592830712/GithubUserExplorer/init_repo_list_optimizied.gif" width="270" alt="User Repo">
+</p>
 
 ## Features
 
 - [x] User Search
     - [ ] Pagination
 - [x] User Detail
-- [ ] User Repo List
+- [x] User Repo List
 - [x] User Following & Follower List
     - [ ] Pagination
 - [ ] Github Authentication for higher rate limit
