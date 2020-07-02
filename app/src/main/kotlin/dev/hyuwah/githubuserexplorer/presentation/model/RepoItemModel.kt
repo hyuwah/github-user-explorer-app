@@ -1,4 +1,4 @@
-package dev.hyuwah.githubuserexplorer.presentation.repos
+package dev.hyuwah.githubuserexplorer.presentation.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

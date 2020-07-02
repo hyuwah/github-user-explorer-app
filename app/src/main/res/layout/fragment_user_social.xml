@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.users.social.UserSocialFragment">
+    tools:context=".presentation.social.UserSocialFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_user_social"

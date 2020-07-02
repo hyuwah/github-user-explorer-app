@@ -1,4 +1,4 @@
-package dev.hyuwah.githubuserexplorer.presentation.users.search
+package dev.hyuwah.githubuserexplorer.presentation.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

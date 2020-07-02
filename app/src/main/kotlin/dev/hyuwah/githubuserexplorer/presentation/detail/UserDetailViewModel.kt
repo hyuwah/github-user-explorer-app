@@ -1,17 +1,17 @@
-package dev.hyuwah.githubuserexplorer.presentation.users.detail
+package dev.hyuwah.githubuserexplorer.presentation.detail
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import dev.hyuwah.githubuserexplorer.data.remote.model.UserDetailResponse
-import dev.hyuwah.githubuserexplorer.domain.repository.GithubRepository
+import dev.hyuwah.githubuserexplorer.domain.usecase.GetUserDetail
 import dev.hyuwah.githubuserexplorer.presentation.utils.LiveEvent
 import dev.hyuwah.githubuserexplorer.presentation.utils.MutableLiveEvent
 import dev.hyuwah.githubuserexplorer.presentation.utils.postEvent
 import kotlinx.coroutines.launch
 
 class UserDetailViewModel @ViewModelInject constructor(
-    private val repo: GithubRepository,
+    private val getUserDetail: GetUserDetail,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -23,12 +23,12 @@ class UserDetailViewModel @ViewModelInject constructor(
 
     fun getUserDetail(userName: String) {
         viewModelScope.launch {
-            val result = repo.getUserDetail(userName)
-            if (result.isSuccessful) {
-                result.body()?.let {
+            getUserDetail.execute(
+                userName,
+                onSuccess = {
                     _userDetail.postValue(it)
                 }
-            }
+            )
         }
     }
 

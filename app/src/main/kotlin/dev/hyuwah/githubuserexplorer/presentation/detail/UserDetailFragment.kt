@@ -1,4 +1,4 @@
-package dev.hyuwah.githubuserexplorer.presentation.users.detail
+package dev.hyuwah.githubuserexplorer.presentation.detail
 
 import android.os.Bundle
 import android.view.Menu
@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.hyuwah.githubuserexplorer.R
 import dev.hyuwah.githubuserexplorer.data.remote.model.UserDetailResponse
 import dev.hyuwah.githubuserexplorer.databinding.FragmentUserDetailBinding
-import dev.hyuwah.githubuserexplorer.presentation.users.social.SocialType
+import dev.hyuwah.githubuserexplorer.presentation.social.SocialType
 import dev.hyuwah.githubuserexplorer.presentation.utils.NumberFormatter
 import dev.hyuwah.githubuserexplorer.presentation.utils.observeEvent
 import dev.hyuwah.githubuserexplorer.presentation.utils.setTextAndVisibility

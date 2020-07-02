@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import dev.hyuwah.githubuserexplorer.R
 import dev.hyuwah.githubuserexplorer.databinding.FragmentRepoListBinding
+import dev.hyuwah.githubuserexplorer.presentation.model.RepoItemModel
 import dev.hyuwah.githubuserexplorer.presentation.utils.viewBinding
 
 @AndroidEntryPoint

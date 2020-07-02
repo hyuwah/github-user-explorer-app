@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import coil.transform.RoundedCornersTransformation
 import dev.hyuwah.githubuserexplorer.databinding.RowItemRepoBinding
+import dev.hyuwah.githubuserexplorer.presentation.model.RepoItemModel
 import dev.hyuwah.githubuserexplorer.presentation.utils.NumberFormatter
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

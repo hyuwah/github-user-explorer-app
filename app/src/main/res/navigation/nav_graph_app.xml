@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/userSearchFragment"
-        android:name="dev.hyuwah.githubuserexplorer.presentation.users.search.UserSearchFragment"
+        android:name="dev.hyuwah.githubuserexplorer.presentation.search.UserSearchFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_user_search">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/userDetailFragment"
-        android:name="dev.hyuwah.githubuserexplorer.presentation.users.detail.UserDetailFragment"
+        android:name="dev.hyuwah.githubuserexplorer.presentation.detail.UserDetailFragment"
         android:label="@string/label_user_detail"
         tools:layout="@layout/fragment_user_detail">
         <argument
@@ -43,14 +43,14 @@
     </fragment>
     <fragment
         android:id="@+id/userSocialFragment"
-        android:name="dev.hyuwah.githubuserexplorer.presentation.users.social.UserSocialFragment"
+        android:name="dev.hyuwah.githubuserexplorer.presentation.social.UserSocialFragment"
         tools:layout="@layout/fragment_user_social">
         <argument
             android:name="userName"
             app:argType="string" />
         <argument
             android:name="socialType"
-            app:argType="dev.hyuwah.githubuserexplorer.presentation.users.social.SocialType" />
+            app:argType="dev.hyuwah.githubuserexplorer.presentation.social.SocialType" />
         <action
             android:id="@+id/action_userSocialFragment_to_userDetailFragment"
             app:destination="@id/userDetailFragment"
